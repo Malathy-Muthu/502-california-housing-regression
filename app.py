@@ -102,13 +102,13 @@ def ames_lr_function(clicks,carat,cut,color,clarity,x):
       inputs=np.array([carat, cut, color, clarity,x]).reshape(1, -1)
 
         # standardization
-        std_inputs = std_scaler.transform(inputs)
+      std_inputs = std_scaler.transform(inputs)
 
-        y = forest_model.predict(std_inputs)
+      y = forest_model.predict(std_inputs)
         
-        y = [-4472.18 + 10253.31*carat + 111.72*cut + 325.83*color + 519.77*clarity+ -652.38*y]
-        formatted_y = "${:,.2f}".format(y[0])
-        return formatted_y
+      y = [-4472.18 + 10253.31*carat + 111.72*cut + 325.83*color + 519.77*clarity+ -652.38*y]
+      formatted_y = "${:,.2f}".format(y[0])
+    return formatted_y
 
 
 
