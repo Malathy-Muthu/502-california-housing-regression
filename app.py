@@ -23,7 +23,7 @@ with open('analysis/model_components/rmse_fig.pkl', 'rb') as f:
 with open('analysis/model_components/std_scaler.pkl', 'rb') as f:
     std_scaler=pickle.load(f)
 with open('analysis/model_components/forest_model.pkl', 'rb') as f:
-    lin_reg=pickle.load(f)
+    forest_model=pickle.load(f)
 
 
 ########### Initiate the app
@@ -49,16 +49,9 @@ app.layout = html.Div(children=[
                 dcc.Input(id='clarity', value=3, type='number', min=1, max=8, step=1),
                 html.Div('x:width in mm'),
                 dcc.Input(id='x', value=3.0, type='number', min=1.0, max=10.9, step=.1),
-                html.Br(),
-                html.Br(),
-                html.Br(),
-                html.Div('Choosing Random Forest Regression (high R2 and low RMSE) ',style={'font-family':'verdana','color': 'green', 'fontSize': 20}),
-                html.Br(),
-                html.Div('R square = 0.98 and RMSE =583',style={'font-family':'verdana','color': 'green', 'fontSize': 20}),
-                html.Br(),
-                html.Br(),
                 dcc.Graph(figure=r2_fig, id='r2_fig'),
                 dcc.Graph(figure=rmse_fig, id='rmse_fig'),
+                html.Br(),
                 html.A('Google Spreadsheet', href='https://docs.google.com/spreadsheets/d/1ktCtc4LMj2AbaLN8J349vXZ7X7M434XfR43h8YRKmzo/edit#gid=0'),
                 html.Br(),
                 html.A('Code on Github', href=githublink),
@@ -68,6 +61,10 @@ app.layout = html.Div(children=[
             ], className='four columns'),
             html.Div([
                 dcc.Graph(figure=coefs, id='coefs_fig'),
+                html.Div('Choosing Random Forest Regression (high R2 and low RMSE) ',style={'font-family':'verdana','color': 'green',                     'fontSize': 20}),
+                html.Br(),
+                html.Div('R square = 0.98 and RMSE =583',style={'font-family':'verdana','color': 'green', 'fontSize': 20}),
+                html.Br()
                 html.Button(children='Submit', id='submit-val', n_clicks=0,
                                 style={
                                 'background-color': 'green',
