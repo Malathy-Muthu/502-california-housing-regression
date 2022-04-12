@@ -60,6 +60,7 @@ app.layout = html.Div(children=[
 
             ], className='four columns'),
             html.Div([
+                html.H3('Linear Regression Coefficients (standardized features)'),
                 dcc.Graph(figure=coefs, id='coefs_fig'),
                 html.Div('Choosing Random Forest Regression (high R2 and low RMSE) ',style={'font-family':'verdana','color': 'green',                     'fontSize': 20}),
                 html.Br(),
