@@ -64,7 +64,7 @@ app.layout = html.Div(children=[
                 html.Div('Choosing Random Forest Regression (high R2 and low RMSE) ',style={'font-family':'verdana','color': 'green',                     'fontSize': 20}),
                 html.Br(),
                 html.Div('R square = 0.98 and RMSE =583',style={'font-family':'verdana','color': 'green', 'fontSize': 20}),
-                html.Br()
+                html.Br(),
                 html.Button(children='Submit', id='submit-val', n_clicks=0,
                                 style={
                                 'background-color': 'green',
