@@ -11,7 +11,7 @@ myheading1='Diamond Price Prediction (from 54k dataset, 4 Cs - Carat, Cut, Color
 image1='Diamond.png'
 tabtitle = 'Diamond Price Prediction'
 sourceurl = 'https://www.kaggle.com/datasets/shivam2503/diamonds'
-githublink = 'https://github.com/Malathy-Muthu/ 502-california-housing-regression'
+githublink = 'https://github.com/Malathy-Muthu/502-california-housing-regression'
 
 ########### open the pickle files ######
 with open('analysis/model_components/coefs_fig.pkl', 'rb') as f:
